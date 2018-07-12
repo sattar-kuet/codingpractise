@@ -1,0 +1,297 @@
+/*
+ Theme Name:   bootstraplight
+ Description:  bootstraplight theme
+ Author:       Abdus Sattar Bhuiyan
+ Version:      1.0.0
+ Text Domain:  bootstraplight
+*/
+
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body{
+    text-align: justify;
+    font-family: "Merriweather",Georgia,Times,serif;
+}
+
+header{
+     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px;
+}
+
+#leftSidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #ffffff;
+    color: #000;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+#leftSidebar.active {
+    margin-left: -250px;
+    transform: rotateY(100deg);
+}
+
+.main_topic {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 0px !important;
+    margin-bottom: -10px;
+    margin-top: 10px;
+}
+
+#leftSidebar ul.components {
+    padding: 20px 0;
+}
+
+#leftSidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#leftSidebar ul li a {
+    padding: 2px 2px 2px 30px;
+    display: block;
+}
+#leftSidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#leftSidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#leftSidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+}
+
+#leftSidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition-delay: 0.2s;
+}
+
+#leftSidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#leftSidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+#leftSidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+
+#leftSidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+
+.navbar-light .navbar-toggler {
+    margin-right: -40px;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #leftSidebar {
+        margin-left: -250px;
+        transform: rotateY(90deg);
+    }
+    #leftSidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    #leftSidebarCollapse span:first-of-type,
+    #leftSidebarCollapse span:nth-of-type(2),
+    #leftSidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    #leftSidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #leftSidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #leftSidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #leftSidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(12, 12, 12);
+}
+
+
+.navbar-light .navbar-nav .nav-link:hover{
+    background: #145610;
+    color: #fff !important;
+    border-radius: 4px;
+}
+.menu-item {
+    margin-right: 10px;
+}
+
+a.nav-link.active {
+    border-bottom: 1px solid #145610;
+}
+a.nav-link {
+    display: inline-block;
+}
+
+.copyright-text{
+    font-size: 13px;
+    padding: 13px;
+}
+.copyright-text a{
+    color: #f5dd5f;
+}
+
+
+.bd-text-green-dark {
+    color: #145610;
+}
+
+#main-desc {
+    padding: 7px 15px;
+    border-radius: 4px;
+    background: #e9ecef;
+    border-bottom: 8px solid #d6e0d6;
+}
+
+#main-desc .blockquote-footer {
+    color: #030608;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.home-container{
+    width: 100% !important;
+}
+
+p {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.gap{
+	height:2.5em;
+}
+
+/*syntax highlighter plugin */
+.crayon-theme-classic .crayon-toolbar {
+     background: none !important; 
+     border-bottom-color: none !important; 
+}
+
+/* Custom bootstrap .card */
+.card {
+    padding: 0px 23px 4px 23px;
+}
+
+/* box style */
+.category-box {
+    background: #033a1e;
+    color: #b9a6a6;
+    min-height: 313px;
+    position: relative;
+}
+
+.box-btn {
+    width: 170px;
+    background: #fff;
+    color: #000;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -85px;
+}
+
+.box-btn:hover {
+    background: #1b5613;
+}
+
+/* Output Box Style */
+
+.output {
+    background-color: #231f1f;
+    margin: 0px auto 10px auto;
+    border-radius: 9px !important;
+}
+.output h2 {
+    font-size: 16px !important;
+    color: #fff;
+    display: block;
+    text-align: center;
+    background: #0f440b;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    padding: 4px;
+}
+
+.output p {
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+    padding: 4px 5px 15px 15px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+
+/* general element */
+strong {
+    font-weight: bold;
+}
